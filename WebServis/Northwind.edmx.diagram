@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ee5e5749b23429d890358b2252ff99a" Name="Diagram1">
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_Membership" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_Paths" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_Profile" Width="1.5" PointX="10.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_Roles" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_Users" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.aspnet_WebEvent_Events" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Category" Width="1.5" PointX="10" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.CustomerDemographic" Width="1.5" PointX="7.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Customer" Width="1.5" PointX="10" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Employee" Width="1.5" PointX="10" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Order_Detail" Width="1.5" PointX="14.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Order" Width="1.5" PointX="12.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Product" Width="1.5" PointX="12.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Region" Width="1.5" PointX="8.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Shipper" Width="1.5" PointX="10" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Supplier" Width="1.5" PointX="10" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthwindModel.Territory" Width="1.5" PointX="13.25" PointY="12" IsExpanded="true" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Me__Appli__531856C7" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Pa__Appli__04AFB25B" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Ro__Appli__719CDDE7" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Us__Appli__42E1EEFE" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Me__UserI__540C7B00" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Pe__PathI__0A688BB1" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Pe__PathI__0E391C95" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Pe__UserI__0F2D40CE" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK__aspnet_Pr__UserI__681373AD" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Employees_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Orders_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Order_Details_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Order_Details_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Orders_Shippers" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Products_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.FK_Territories_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.aspnet_UsersInRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.CustomerCustomerDemo" ManuallyRouted="false" />
+        <AssociationConnector Association="NorthwindModel.EmployeeTerritories" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

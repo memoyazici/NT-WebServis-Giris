@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductList">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductListResult" type="tns:ArrayOfProductDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductDTO" nillable="true" type="tns:ProductDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SupplierID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuantityPerUnit" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitPrice" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitsInStock" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitsOnOrder" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReorderLevel" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="Discontinued" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Identity" type="tns:Identity" />
+      <s:complexType name="Identity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductListSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductList" />
+  </wsdl:message>
+  <wsdl:message name="ProductListSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductListIdentity">
+    <wsdl:part name="Identity" element="tns:Identity" />
+  </wsdl:message>
+  <wsdl:portType name="ProductListServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductList">
+      <wsdl:input message="tns:ProductListSoapIn" />
+      <wsdl:output message="tns:ProductListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductListServiceSoap" type="tns:ProductListServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductList">
+      <soap:operation soapAction="http://tempuri.org/ProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ProductListIdentity" part="Identity" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProductListServiceSoap12" type="tns:ProductListServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductList">
+      <soap12:operation soapAction="http://tempuri.org/ProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ProductListIdentity" part="Identity" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductListService">
+    <wsdl:port name="ProductListServiceSoap" binding="tns:ProductListServiceSoap">
+      <soap:address location="http://localhost:54177/ProductListService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProductListServiceSoap12" binding="tns:ProductListServiceSoap12">
+      <soap12:address location="http://localhost:54177/ProductListService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
